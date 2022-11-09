@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>섹스 성향 테스트 / 나와 잘 맞는 섹스 타입은 무엇일까? - 체레미 마카</title>
+    <link href='app.css?20210122-5' rel='stylesheet' type='text/css'>
+
+    <link rel="canonical" href="https://www.cheremimaka.com/sex_mind_test/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cheremimaka.com/sex_mind_test/">
+    <meta property="og:title" content="섹스 성향 테스트 / 나와 잘 맞는 섹스 타입은 무엇일까? - 체레미 마카">
+    <meta property="og:description" content="섹슈얼 헬스케어 브랜드 체레미 마카에서 당신의 숨겨진 섹스 성향을 알려줄게요.">
+    <meta property="og:image" content="https://www.cheremimaka.com/sex_mind_test/images/fb_thumbnail.png">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@cheremimaka">
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-62827004-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TPLQBFP');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <div id="app" class="js-quiz" v-cloak>
+
+        <div class="c-logo">
+            <a href="https://www.evecondoms.com/product/list.html?cate_no=29">
+                <img src="images/cheremi-logo.svg" alt="logo | 체레미 마카">
+                <p> | 체레미 마카</p>
+            </a>
+        </div>
+        <section class="o-wrapper  o-wrapper--narrow  js-page  u-text-center  u-padding" id="intro" data-page-number="0"
+            v-show="currentPage === 0">
+
+            <h1 class="o-title">
+                <span class="o-title__title">섹스 성향 테스트</span>
+                <span class="u-hidden-visually">─</span>
+                <span class="o-title__subtitle-tail">나와 잘 맞는 <b>섹스 타입</b>은?</span>
+            </h1>
+
+            <video class="js-intro-video" poster="videos/intro.jpg" playsinline loop muted loading="lazy">
+                <source src="videos/intro.webm">
+                <source src="videos/intro.mp4">
+            </video>
+
+            <img src="videos/intro.jpg" alt="" class="u-hidden  js-intro-image">
+
+            <button @click="currentPage++" class="c-btn  c-btn--default main-button">
+                <span class="c-btn__overlay"></span>
+                <span class="c-btn__text c-btn__main main-button-text">섹스 성향 알아보기</span>
+            </button>
+            <p>
+                섹슈얼 헬스케어 브랜드 체레미마카에서
+                <br>
+                당신의 숨겨진 섹스 성향을 알려줄게요.
+            </p>
+            <p>made by 섹스칼럼리스트 <b>세상에 오럴수가</b></p>
+            <p>ver. 2022.2</p>
+        </section>
+
+        <transition-group tag="div" class="c-vue-animation  js-slide-container" name="slide" v-show="currentPage > 0"
+            @after-enter="enterComplete" @after-leave="leaveComplete">
+            <section v-for="(page, i) in pages" class="o-wrapper  o-wrapper--min-height  js-page" :id="`q${i+1}`"
+                :data-page-number="i + 1" v-show="currentPage === (i + 1)" :key="i + 1">
+                <h1 class="o-title  o-title--small">
+                    <span class="o-title__subtitle-head">Q {{ (i + 1).toString().padStart(2, '0') }}</span><span
+                        class="u-hidden-visually">:</span>
+                    <span class="o-title__title">
+                        {{ page.question }}
+                    </span>
+                </h1>
+                <div class="c-button-radio  sub-animation-1">
+                    <input @click="currentPage++" type="radio" :name="`q${i+1}`" :id="`q${i+1}_1`" :value="page.value1"
+                        v-model="results[i]">
+                    <label :for="`q${i+1}_1`">{{ page.answer1 }}</label>
+                </div>
+
+                <div class="c-button-radio  sub-animation-2">
+                    <input @click="currentPage++" type="radio" :name="`q${i+1}`" :id="`q${i+1}_2`" :value="page.value2"
+                        v-model="results[i]">
+                    <label :for="`q${i+1}_2`">{{ page.answer2 }}</label>
+                </div>
+            </section>
+            
+
+            <section class="o-wrapper  o-wrapper--narrow  u-text-center  js-page loading-wrap" id="loading" data-page-number="13"
+                v-show="currentPage === 13" :key="13">
+
+                <img class="u-margin-bottom" src="images/loading.jpg" alt="로딩중...">
+
+<!--                <video poster="videos/loading.jpg" class="js-loading-video" playsinline loop muted>-->
+<!--                    <source src="videos/loading.webm">-->
+<!--                    <source src="videos/loading.mp4">-->
+<!--                </video>-->
+
+<!--                <img src="videos/loading.jpg" alt="" class="u-hidden js-loading-image">-->
+
+                <h1 class="u-margin-top-none">당신의 섹스타입을 분석중</h1>
+
+                <div class="c-progress2">
+                    <div class="c-progress2__child  c-progress2__bar"></div>
+                    <div class="c-progress2__child  c-progress2__shrink   c-progress2__animation"></div>
+                </div>
+
+            </section>
+        </transition-group>
+
+        <aside class="o-wrapper  u-margin-bottom" v-show="currentPage > 0 && currentPage < 13">
+            <div class="c-progress">
+                <div class="c-progress__bar-container">
+                    <div class="c-progress__bar  js-progress-bar"></div>
+                </div>
+                <div class="c-progress__page-number">
+                    {{ currentPage.toString().padStart(2, '0') }}/12
+                </div>
+            </div>
+        </aside>
+
+        <footer>
+            <p>지속가능한 섹슈얼 헬스케어 브랜드 '체레미 마카'</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="./button_event.js" type="text/javascript" text="javascript"></script>
+</body>
+
+</html>
