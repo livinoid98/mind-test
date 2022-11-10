@@ -1332,3 +1332,42 @@ footer p{
   font-weight:600;
   color:#032345;
 }
+
+.add-function-button-wrap{
+  display:flex;
+  flex-direction:column;
+  padding-bottom:32px;
+}
+.add-function-button-wrap button{
+  width:90%;
+  height:50px;
+  margin:0 auto;
+  margin-top:10px;
+  border-radius:2.5px;
+  border:none;
+  font-size:16px;
+  font-weight:600;
+  color:#EEECEA;
+  cursor:pointer;
+}
+.add-function-button-wrap button a{
+  color:inherit;
+}
+.add-function-button-wrap button:nth-child(1){
+  margin-top:0px;
+  background-color:#04232D;
+}
+.add-function-button-wrap button:nth-child(2){
+  background-color:#999;
+}
+.add-function-button-wrap button:nth-child(3){
+  background-color:#9A4938;
+}
+.share-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.another-share{
+  margin-top:0px;
+}
