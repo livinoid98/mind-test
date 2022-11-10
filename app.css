@@ -1367,7 +1367,59 @@ footer p{
   display:flex;
   justify-content:center;
 }
+.share-wrap label{
+  font-size:12px;
+  font-weight:600;
+  color:#D3C7C2;
+  display:block;
+  text-align:center;
+  
+}
 
 .another-share{
   margin-top:0px;
+}
+
+.another-share-modal-back{
+  width:100%;
+  height:100vh;
+  background-color:rgba(0,0,0,0.5);
+  position:fixed;
+  top:0px;
+  left:0px;
+  margin-top:0px;
+  display:none;
+}
+
+.another-share-modal{
+  width:70%;
+  max-width:800px;
+  height:80%;
+  background-color:#fff;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
+}
+
+.another-share-modal .another-share-title-wrap{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:2px solid #04232D;;
+}
+.another-share-modal .another-share-title-wrap h3{
+  margin:0px;
+  padding:20px 0px;
+  font-size:22px;
+}
+.another-share-modal .another-share-title-wrap img{
+  width:24px;
+  height:24px;
+  margin:0px;
+  margin-top:26px;
+  margin-right:20px;
+}
+
+.another-share-modal .another-share-content-wrap ul{
+  list-style: none;
 }
