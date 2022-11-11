@@ -1361,9 +1361,6 @@ footer p{
 .add-function-button-wrap button:nth-child(2){
   background-color:#999;
 }
-.add-function-button-wrap button:nth-child(3){
-  background-color:#9A4938;
-}
 .share-wrap{
   display:flex;
   justify-content:center;
